@@ -15,7 +15,7 @@ interface TopNavigationProps {
 	isOpenLeftPanel: boolean;
 	toggleMenuItem: (id: number) => void;
 	toggleLeftPanel: (data: boolean) => void;
-	children?: any[];
+	children?: JSX.Element;
 }
 
 export default class LeftMenu extends Component<TopNavigationProps> {
@@ -44,7 +44,7 @@ export default class LeftMenu extends Component<TopNavigationProps> {
 					color="blue"
 				>
 					{menuList.map((item) => {
-						const isActiveMenu = activeMenu == item.id;
+						const isActiveMenu = activeMenu === item.id;
 						const icon = item.icon;
 						return (
 							<Menu.Item

@@ -1,33 +1,27 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { createAction, Dispatch } from '@reduxjs/toolkit';
+import { Dispatch } from '@reduxjs/toolkit';
 
-import { increment } from './store/reducers/counter.slice';
 import { Header } from './feateries/Header/Header';
 import { WithLeftMenuPannel } from './feateries/WithLeftMenuPannel/WithLeftMenuPannel';
+import { MainContainer } from './feateries/MainContainer/MainContainer';
 
 import './App.css';
+import { StoreState } from './store/entities/coreStore';
 
 function App(props: any) {
 	return (
 		<div className="App">
 			<Header />
 			<WithLeftMenuPannel>
-				{props.counter}
-				<button onClick={props.addNumber}>tt</button>
+				<MainContainer />
 			</WithLeftMenuPannel>
 		</div>
 	);
 }
 
-const mapStateToProps = (state: any) => ({
-	counter: state.counter
-});
+const mapStateToProps = (state: StoreState) => ({});
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-	addNumber: () => {
-		dispatch(increment(3));
-	}
-});
+const mapDispatchToProps = (dispatch: Dispatch) => ({});
 export default connect(mapStateToProps, mapDispatchToProps)(App);
