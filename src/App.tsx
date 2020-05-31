@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import { connect } from 'react-redux';
+import { createAction, Dispatch } from '@reduxjs/toolkit';
+
+import { increment } from './store/reducers/counter.slice';
+import { Header } from './feateries/Header/Header';
+import { WithLeftMenuPannel } from './feateries/WithLeftMenuPannel/WithLeftMenuPannel';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props: any) {
+	return (
+		<div className="App">
+			<Header />
+			<WithLeftMenuPannel>
+				{props.counter}
+				<button onClick={props.addNumber}>tt</button>
+			</WithLeftMenuPannel>
+		</div>
+	);
 }
 
-export default App;
+const mapStateToProps = (state: any) => ({
+	counter: state.counter
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+	addNumber: () => {
+		dispatch(increment(3));
+	}
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
