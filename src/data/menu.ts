@@ -1,8 +1,15 @@
 export enum MenuListItem {
-	home = 'home',
+	news = 'news',
 	messages = 'messages',
 	calendar = 'calendar',
 	contacts = 'contacts'
+}
+
+export enum MenuListIcons {
+	news = 'home',
+	messages = 'envelope',
+	calendar = 'calendar alternate',
+	contacts = 'phone'
 }
 
 export interface MenuList {
@@ -12,8 +19,8 @@ export interface MenuList {
 }
 
 export const menuList = [
-	{ id: 1, name: MenuListItem.home, icon: 'home' },
-	{ id: 2, name: MenuListItem.messages, icon: 'envelope' },
-	{ id: 3, name: MenuListItem.calendar, icon: 'calendar alternate' },
-	{ id: 4, name: MenuListItem.contacts, icon: 'phone' }
+	{ id: 1, name: MenuListItem.news, icon: MenuListIcons.news },
+	{ id: 2, name: MenuListItem.messages, icon: MenuListIcons.messages },
+	{ id: 3, name: MenuListItem.calendar, icon: MenuListIcons.calendar },
+	{ id: 4, name: MenuListItem.contacts, icon: MenuListIcons.contacts }
 ];

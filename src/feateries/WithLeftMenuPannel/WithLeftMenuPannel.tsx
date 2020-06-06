@@ -55,7 +55,7 @@ export default class LeftMenu extends Component<TopNavigationProps> {
 								onClick={this.handleItemClick}
 								name={item.name}
 							>
-								<Icon name="home" />
+								<Icon name={icon} />
 								{item.name}
 							</Menu.Item>
 						);

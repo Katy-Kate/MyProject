@@ -1,13 +1,15 @@
 import React from 'react';
 import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { Container } from 'semantic-ui-react';
+
 import { StoreState } from '../../store/entities/coreStore';
 import { getActiveMenu } from '../../store/header/header.selector';
-import { connect } from 'react-redux';
-import { NewsPage } from './News/News';
 import { MessagesPage } from './MessagesPage/MessagesPage';
 import { CalendarPage } from './CalendarPage/CalendarPage';
 import { ContactsPage } from './ContactsPage/ContactsPage';
-import { Container, Header } from 'semantic-ui-react';
+import { NewsPage } from './News/News';
+
 interface MainContainerProps {
 	activeMenu: number;
 }
