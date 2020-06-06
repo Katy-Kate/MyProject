@@ -8,7 +8,7 @@ import { NewsState } from '../../../store/entities/news';
 import { addNews } from '../../../store/news/news.slice';
 import { initNews } from '../../../store/news/news.thunk';
 
-export interface HomePageProps {
+export interface NewsPageProps {
 	news: NewsState[];
 	addNews: (data: NewsState[]) => void;
 	initNews: () => void;
@@ -40,7 +40,7 @@ const renderCard = (news: NewsState) => {
 	);
 };
 
-export class News extends React.PureComponent<HomePageProps> {
+export class News extends React.PureComponent<NewsPageProps> {
 	async componentDidMount() {
 		this.props.initNews();
 	}
