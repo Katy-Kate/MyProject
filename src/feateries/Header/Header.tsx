@@ -20,9 +20,9 @@ export default class TopNavigation extends Component<TopNavigationProps> {
 
 	render() {
 		return (
-			<Menu inverted color="teal">
-				<Menu.Item as="a">
-					<Icon inverted color="grey" name="bars" onClick={this.handleLeftPanel} />
+			<Menu inverted color="blue">
+				<Menu.Item as="a" onClick={this.handleLeftPanel}>
+					<Icon inverted color="grey" name="bars" />
 				</Menu.Item>
 			</Menu>
 		);

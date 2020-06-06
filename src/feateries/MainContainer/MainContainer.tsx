@@ -3,10 +3,11 @@ import { Dispatch } from 'redux';
 import { StoreState } from '../../store/entities/coreStore';
 import { getActiveMenu } from '../../store/header/header.selector';
 import { connect } from 'react-redux';
-import { HomePage } from './HomePage/HomePage';
+import { NewsPage } from './News/News';
 import { MessagesPage } from './MessagesPage/MessagesPage';
 import { CalendarPage } from './CalendarPage/CalendarPage';
 import { ContactsPage } from './ContactsPage/ContactsPage';
+import { Container, Header } from 'semantic-ui-react';
 interface MainContainerProps {
 	activeMenu: number;
 }
@@ -14,7 +15,7 @@ interface MainContainerProps {
 function renderMainPage(activeMenu: number) {
 	switch (activeMenu) {
 		case 1:
-			return <HomePage />;
+			return <NewsPage />;
 		case 2:
 			return <MessagesPage />;
 		case 3:
@@ -24,14 +25,12 @@ function renderMainPage(activeMenu: number) {
 	}
 }
 
-class Container extends React.Component<MainContainerProps> {
+class MainPageContainer extends React.Component<MainContainerProps> {
 	render() {
 		return (
-			<div>
-				MainContainer
-				<p>{this.props.activeMenu}</p>
+			<Container text style={{ margin: 20 }}>
 				{renderMainPage(this.props.activeMenu)}
-			</div>
+			</Container>
 		);
 	}
 }
@@ -42,4 +41,4 @@ const mapStateToProps = (state: StoreState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({});
 
-export const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Container);
+export const MainContainer = connect(mapStateToProps, mapDispatchToProps)(MainPageContainer);

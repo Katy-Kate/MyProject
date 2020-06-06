@@ -9,13 +9,11 @@ export const headerSlice = createSlice({
 		isOpenLeftPanel: false
 	},
 	reducers: {
-		toogleTopNavigation(state: HeaderState, action: PayloadAction<number>) {
+		toogleTopNavigation(state: HeaderState, action: PayloadAction<number>): void {
 			state.activeMenu = action.payload;
-			return state;
 		},
-		toggleLeftPanel(state: HeaderState, action: PayloadAction<boolean>) {
+		toggleLeftPanel(state: HeaderState, action: PayloadAction<boolean>): void {
 			state.isOpenLeftPanel = action.payload;
-			return state;
 		}
 	}
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, Action } from 'redux';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 
